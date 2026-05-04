@@ -5,45 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Millonaria</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: white; margin: 0; padding: 0; }
-        header { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); padding: 50px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; }
-        .subtitle { color: #94a3b8; margin-top: 10px; font-size: 1rem; }
-        .container { padding: 30px 15px; max-width: 1200px; margin: 0 auto; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #0b1120; color: #e5e7eb; margin: 0; padding: 0; }
+        
+        /* TU MENÚ DE VUELTA */
+        nav { background: #111827; padding: 15px; text-align: center; border-bottom: 1px solid #1e293b; }
+        nav a { color: #3b82f6; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
+
+        header { background: linear-gradient(120deg, #020617, #1e3a8a); padding: 40px 20px; text-align: center; }
+        h1 { color: #ffffff; margin: 0; font-size: 2rem; }
+        
+        .container { padding: 20px; max-width: 1100px; margin: 0 auto; }
+        
+        /* SECCIÓN DE OPINIÓN RECUPERADA */
+        .opinion-section { background: #1e293b; padding: 25px; border-radius: 15px; margin-bottom: 30px; border-left: 5px solid #3b82f6; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        .opinion-section h2 { margin-top: 0; color: #3b82f6; }
+
+        /* REJILLA DE LIBROS CON TUS FOTOS */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
-        .card { background: #1e293b; border-radius: 12px; overflow: hidden; transition: transform 0.3s; border: 1px solid #334155; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-5px); }
+        .card { background: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155; transition: transform 0.3s; }
         .card img { width: 100%; height: 240px; object-fit: cover; }
-        .card-content { padding: 12px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .card-title { font-size: 0.9rem; font-weight: bold; margin: 5px 0; color: #f8fafc; }
-        .btn { display: block; background: #3b82f6; color: white; text-decoration: none; padding: 8px; border-radius: 6px; font-size: 0.8rem; margin-top: 10px; transition: background 0.2s; }
-        .btn:hover { background: #2563eb; }
+        .card-content { padding: 10px; text-align: center; }
+        .card-title { font-size: 0.85rem; font-weight: bold; }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Lecciones</a>
+    <a href="#">Libros</a>
+    <a href="#">Comunidad</a>
+</nav>
+
 <header>
     <h1>📚 Biblioteca Millonaria</h1>
-    <p class="subtitle">Tu dosis diaria de mentalidad y abundancia</p>
+    <p style="color: #94a3af;">Conocimiento que transforma tu realidad</p>
 </header>
 
 <div class="container">
-    <div class="grid" id="biblioteca">
-        <div class="card"><img src="La-voz.jpg"><div class="card-content"><div class="card-title">La Voz de tu Alma</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Padre-rico.jpg"><div class="card-content"><div class="card-title">Padre Rico Padre Pobre</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Rico.jpg"><div class="card-content"><div class="card-title">Piensa y Hazte Rico</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Habitos.jpg"><div class="card-content"><div class="card-title">Hábitos Atómicos</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="La-psicologia-del-dinero.jpg"><div class="card-content"><div class="card-title">Psicología del Dinero</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Algo-grande-viene.jpg"><div class="card-content"><div class="card-title">Algo Grande Viene</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Desbloquea.jpg"><div class="card-content"><div class="card-title">Desbloquea tu Mente</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="El-hombre-mas-rico.jpg"><div class="card-content"><div class="card-title">El Hombre más Rico</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="El-poder.jpg"><div class="card-content"><div class="card-title">El Poder</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Expande.jpg"><div class="card-content"><div class="card-title">Expande tu Mente</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Subconsciente.jpg"><div class="card-content"><div class="card-title">El Subconsciente</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Si-lo-crees.jpg"><div class="card-content"><div class="card-title">Si lo Crees lo Creas</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Manifestar.jpg"><div class="card-content"><div class="card-title">Cómo Manifestar</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Meditaciones.jpg"><div class="card-content"><div class="card-title">Meditaciones</div><a href="#" class="btn">Resumen</a></div></div>
-        <div class="card"><img src="Riqueza.jpg"><div class="card-content"><div class="card-title">Riqueza</div><a href="#" class="btn">Resumen</a></div></div>
+    
+    <div class="opinion-section">
+        <h2>Mi Opinión Personal</h2>
+        <p>Escribe aquí de nuevo tu opinión sobre lo que estás aprendiendo. (Recuerda que cada vez que pegamos código nuevo debemos incluir tus textos para que no se borren).</p>
+    </div>
+
+    <h2 style="border-bottom: 2px solid #1e3a8a; padding-bottom: 10px;">Catálogo de Libros</h2>
+    <div class="grid">
+        <div class="card"><img src="Padre-rico.jpg"><div class="card-content"><div class="card-title">Padre Rico Padre Pobre</div></div></div>
+        <div class="card"><img src="Rico.jpg"><div class="card-content"><div class="card-title">Piensa y Hazte Rico</div></div></div>
+        <div class="card"><img src="Habitos.jpg"><div class="card-content"><div class="card-title">Hábitos Atómicos</div></div></div>
+        <div class="card"><img src="La-voz.jpg"><div class="card-content"><div class="card-title">La Voz de tu Alma</div></div></div>
+        <div class="card"><img src="Algo-grande-viene.jpg"><div class="card-content"><div class="card-title">Algo Grande Viene</div></div></div>
+        <div class="card"><img src="Desbloquea.jpg"><div class="card-content"><div class="card-title">Desbloquea tu Mente</div></div></div>
+        <div class="card"><img src="Riqueza.jpg"><div class="card-content"><div class="card-title">Riqueza</div></div></div>
+        <div class="card"><img src="El-poder.jpg"><div class="card-content"><div class="card-title">El Poder</div></div></div>
+        <div class="card"><img src="Subconsciente.jpg"><div class="card-content"><div class="card-title">El Subconsciente</div></div></div>
     </div>
 </div>
 
