@@ -1,67 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Millonaria</title>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #0b1120; color: #e5e7eb; margin: 0; padding: 0; }
-        
-        /* TU MENÚ DE VUELTA */
-        nav { background: #111827; padding: 15px; text-align: center; border-bottom: 1px solid #1e293b; }
-        nav a { color: #3b82f6; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca Millonaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    background:#0b1120;
+    color:#e5e7eb;
+}
+header {
+    background: linear-gradient(120deg,#020617,#1e3a8a);
+    padding:40px;
+    text-align:center;
+}
+header h1 {font-size:32px;margin:0;}
+header p {color:#9ca3af;}
+nav {
+    background:#020617;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index: 1000;
+}
+nav a {
+    color:#e5e7eb;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:500;
+}
+nav a:hover {color:#38bdf8;}
+.container {display:flex;padding:25px; gap: 20px;}
+.posts {width:70%;}
+.post {
+    background:#111827;
+    padding:20px;
+    margin-bottom:25px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+.post img.featured {
+    width:100%;
+    border-radius:12px;
+    margin-bottom:10px;
+}
+.post h2 {color:#38bdf8;}
 
-        header { background: linear-gradient(120deg, #020617, #1e3a8a); padding: 40px 20px; text-align: center; }
-        h1 { color: #ffffff; margin: 0; font-size: 2rem; }
-        
-        .container { padding: 20px; max-width: 1100px; margin: 0 auto; }
-        
-        /* SECCIÓN DE OPINIÓN RECUPERADA */
-        .opinion-section { background: #1e293b; padding: 25px; border-radius: 15px; margin-bottom: 30px; border-left: 5px solid #3b82f6; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
-        .opinion-section h2 { margin-top: 0; color: #3b82f6; }
+/* NUEVA CUADRÍCULA DE 27 LIBROS */
+.libros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.libro-card {
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    text-align: center;
+}
+.libro-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.libro-card span {
+    display: block;
+    padding: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
 
-        /* REJILLA DE LIBROS CON TUS FOTOS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
-        .card { background: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155; transition: transform 0.3s; }
-        .card img { width: 100%; height: 240px; object-fit: cover; }
-        .card-content { padding: 10px; text-align: center; }
-        .card-title { font-size: 0.85rem; font-weight: bold; }
-    </style>
+.sidebar {width:30%;}
+.box {
+    background:#111827;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+footer {
+    background:#020617;
+    text-align:center;
+    padding:20px;
+    color:#9ca3af;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .container {flex-direction: column;}
+    .posts, .sidebar {width: 100%; padding: 0;}
+}
+</style>
 </head>
 <body>
 
-<nav>
-    <a href="#">Inicio</a>
-    <a href="#">Lecciones</a>
-    <a href="#">Libros</a>
-    <a href="#">Comunidad</a>
-</nav>
-
 <header>
-    <h1>📚 Biblioteca Millonaria</h1>
-    <p style="color: #94a3af;">Conocimiento que transforma tu realidad</p>
+<h1>📚 Biblioteca Millonaria</h1>
+<p>Conocimiento, mentalidad y estrategias que transforman vidas</p>
 </header>
 
+<nav>
+<a href="#">Inicio</a>
+<a href="#catalogo">Libros</a>
+<a href="#">Frases</a>
+<a href="#">Lecciones</a>
+</nav>
+
 <div class="container">
-    
-    <div class="opinion-section">
-        <h2>Mi Opinión Personal</h2>
-        <p>Escribe aquí de nuevo tu opinión sobre lo que estás aprendiendo. (Recuerda que cada vez que pegamos código nuevo debemos incluir tus textos para que no se borren).</p>
+
+<div class="posts">
+
+    <div class="post" id="catalogo">
+        <h2>📂 Mi Colección Completa (27 Libros)</h2>
+        <div class="libros-grid">
+            <div class="libro-card"><img src="Algo-grande-viene.jpg"><span>Algo Grande Viene</span></div>
+            <div class="libro-card"><img src="Desbloquea.jpg"><span>Desbloquea tu Mente</span></div>
+            <div class="libro-card"><img src="El-camino.jpg"><span>El Camino</span></div>
+            <div class="libro-card"><img src="El-hombre-mas-rico.jpg"><span>El Hombre más Rico</span></div>
+            <div class="libro-card"><img src="El-poder.jpg"><span>El Poder</span></div>
+            <div class="libro-card"><img src="La-voz.jpg"><span>La Voz de tu Alma</span></div>
+            <div class="libro-card"><img src="Padre-rico.jpg"><span>Padre Rico Padre Pobre</span></div>
+            <div class="libro-card"><img src="Rico.jpg"><span>Piensa y Hazte Rico</span></div>
+            <div class="libro-card"><img src="Riqueza.jpg"><span>Riqueza</span></div>
+            <div class="libro-card"><img src="Subconsciente.jpg"><span>El Subconsciente</span></div>
+            <div class="libro-card"><img src="Si-lo-crees.jpg"><span>Si lo Crees lo Creas</span></div>
+            <div class="libro-card"><img src="Piense.jpg"><span>Piense y hágase rico</span></div>
+            <div class="libro-card"><img src="Porque-los-ricos.jpg"><span>Por qué los ricos...</span></div>
+            <div class="libro-card"><img src="Que-seas-rico.jpg"><span>Queremos que seas rico</span></div>
+            <div class="libro-card"><img src="Saga-la-voz.jpg"><span>Saga La Voz</span></div>
+            <div class="libro-card"><img src="Habitos.jpg"><span>Hábitos Atómicos</span></div>
+            <div class="libro-card"><img src="Manifestar.jpg"><span>Cómo Manifestar</span></div>
+            <div class="libro-card"><img src="Meditaciones.jpg"><span>Meditaciones</span></div>
+            <div class="libro-card"><img src="Millonario.jpg"><span>Mente Millonaria</span></div>
+            <div class="libro-card"><img src="Disciplina.jpg"><span>Disciplina</span></div>
+            <div class="libro-card"><img src="Exito.jpg"><span>Camino al Éxito</span></div>
+            <div class="libro-card"><img src="Enfoque.jpg"><span>Enfoque Total</span></div>
+            <div class="libro-card"><img src="Liderazgo.jpg"><span>Liderazgo</span></div>
+            <div class="libro-card"><img src="Ventas.jpg"><span>Ventas Reales</span></div>
+            <div class="libro-card"><img src="Libertad.jpg"><span>Libertad Financiera</span></div>
+            <div class="libro-card"><img src="Abundancia.jpg"><span>Abundancia</span></div>
+            <div class="libro-card"><img src="Mentalidad.jpg"><span>Mentalidad</span></div>
+        </div>
     </div>
 
-    <h2 style="border-bottom: 2px solid #1e3a8a; padding-bottom: 10px;">Catálogo de Libros</h2>
-    <div class="grid">
-        <div class="card"><img src="Padre-rico.jpg"><div class="card-content"><div class="card-title">Padre Rico Padre Pobre</div></div></div>
-        <div class="card"><img src="Rico.jpg"><div class="card-content"><div class="card-title">Piensa y Hazte Rico</div></div></div>
-        <div class="card"><img src="Habitos.jpg"><div class="card-content"><div class="card-title">Hábitos Atómicos</div></div></div>
-        <div class="card"><img src="La-voz.jpg"><div class="card-content"><div class="card-title">La Voz de tu Alma</div></div></div>
-        <div class="card"><img src="Algo-grande-viene.jpg"><div class="card-content"><div class="card-title">Algo Grande Viene</div></div></div>
-        <div class="card"><img src="Desbloquea.jpg"><div class="card-content"><div class="card-title">Desbloquea tu Mente</div></div></div>
-        <div class="card"><img src="Riqueza.jpg"><div class="card-content"><div class="card-title">Riqueza</div></div></div>
-        <div class="card"><img src="El-poder.jpg"><div class="card-content"><div class="card-title">El Poder</div></div></div>
-        <div class="card"><img src="Subconsciente.jpg"><div class="card-content"><div class="card-title">El Subconsciente</div></div></div>
+    <div class="post">
+        <h2>📖 Mis Reseñas</h2>
+        <p><strong>La Voz de tu Alma:</strong> Este libro me sorprendió más de lo que esperaba...</p>
+        <p><strong>Piensa y Hazte Rico:</strong> Antes de leerlo pensé que sería un libro antiguo sin mucho valor...</p>
+        <p><strong>Hábitos Atómicos:</strong> Este fue uno de los libros más prácticos que he leído...</p>
+    </div>
+
+</div>
+
+<div class="sidebar">
+    <div class="box">
+        <h3>📢 Monetización</h3>
+        <p>Espacio para anuncios y generación de ingresos pasivos</p>
+    </div>
+
+    <div class="box">
+        <h3>💡 Lección del Día</h3>
+        <p>Las personas exitosas no esperan el momento perfecto, actúan incluso cuando no tienen ganas.</p>
+    </div>
+
+    <div class="box">
+        <h3>🔥 Frases</h3>
+        <p>"La riqueza comienza en la mente"<br>"La disciplina crea resultados"</p>
     </div>
 </div>
+
+</div>
+
+<footer>
+<p>© 2026 Biblioteca Millonaria | Plataforma de conocimiento estratégico</p>
+</footer>
 
 </body>
 </html>
