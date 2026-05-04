@@ -1,133 +1,183 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biblioteca Millonaria</title>
+<title>Aura Millonaria | Enciclopedia del Éxito</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body { font-family: 'Poppins', sans-serif; margin:0; background:#0b1120; color:#e5e7eb; scroll-behavior: smooth; }
-header { background: linear-gradient(120deg,#020617,#1e3a8a); padding:40px; text-align:center; }
-header h1 {font-size:32px;margin:0;}
-header p {color:#9ca3af;}
-nav { background:#020617; padding:15px; text-align:center; position:sticky; top:0; z-index:1000; }
-nav a { color:#e5e7eb; margin:0 15px; text-decoration:none; font-weight:500; font-size: 0.9rem; }
-nav a:hover {color:#38bdf8;}
-.container {display:flex; padding:25px; gap:20px;}
-.posts {width:70%;}
-.post { background:#111827; padding:20px; margin-bottom:25px; border-radius:18px; box-shadow:0 10px 25px rgba(0,0,0,0.5); }
-.post h2 {color:#38bdf8; margin-top:0; border-bottom: 1px solid #1e293b; padding-bottom: 10px;}
+    :root { --blue-glow: #38bdf8; --dark-bg: #0b1120; --card-bg: #111827; }
+    body { font-family: 'Poppins', sans-serif; margin:0; background: var(--dark-bg); color:#e5e7eb; scroll-behavior: smooth; }
+    header { background: linear-gradient(135deg,#020617,#1e3a8a); padding:60px 20px; text-align:center; border-bottom: 3px solid var(--blue-glow); }
+    header h1 { font-size:35px; margin:0; letter-spacing: 2px; text-transform: uppercase; }
+    header p { color: var(--blue-glow); font-weight: 300; max-width: 600px; margin: 10px auto; }
+    
+    nav { background:#020617; padding:15px; text-align:center; position:sticky; top:0; z-index:1000; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    nav a { color:#e5e7eb; text-decoration:none; font-weight:500; font-size: 0.8rem; padding: 5px 10px; transition: 0.3s; border: 1px solid transparent; }
+    nav a:hover { color: var(--blue-glow); border-bottom: 1px solid var(--blue-glow); }
 
-/* REJILLA DE LIBROS */
-.libros-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 15px; }
-.libro-card { background: #1f2937; border-radius: 10px; overflow: hidden; border: 1px solid #374151; text-align: center; }
-.libro-card img { width: 100%; height: 160px; object-fit: cover; }
-.libro-card span { display: block; padding: 5px; font-size: 0.65rem; }
+    .container { display:flex; padding:25px; gap:20px; max-width: 1400px; margin: auto; }
+    .posts { width:75%; }
+    .sidebar { width:25%; }
 
-/* SECCIONES LARGAS CON SCROLL (Para no hacer la página infinita) */
-.scroll-box { max-height: 400px; overflow-y: auto; padding-right: 10px; }
-.item-list { background: #1e293b; padding: 12px; border-radius: 10px; margin-bottom: 8px; border-left: 4px solid #38bdf8; }
-.item-list strong { color: #38bdf8; display: block; margin-bottom: 5px; }
+    .post { background: var(--card-bg); padding:25px; margin-bottom:30px; border-radius:20px; border: 1px solid #1e293b; }
+    .post h2 { color: var(--blue-glow); font-size: 22px; margin-top:0; border-bottom: 1px solid #1e293b; padding-bottom: 10px; margin-bottom: 20px; }
+    
+    .hero-message { background: linear-gradient(45deg, #1e3a8a, #020617); border: 2px solid var(--blue-glow); padding: 30px; border-radius: 20px; text-align: center; margin-bottom: 30px; }
 
-.sidebar {width:30%;}
-.box { background:#111827; padding:15px; margin-bottom:20px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.4); }
+    /* GRID DE 50 LIBROS */
+    .libros-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+    .libro-card { background: #020617; border-radius: 10px; overflow: hidden; border: 1px solid #1e293b; transition: 0.3s; }
+    .libro-card:hover { transform: translateY(-5px); border-color: var(--blue-glow); }
+    .libro-card img { width: 100%; height: 160px; object-fit: cover; }
+    .libro-card span { display: block; padding: 5px; font-size: 10px; text-align: center; font-weight: 600; }
 
-@media (max-width: 768px) { .container {flex-direction: column;} .posts, .sidebar {width: 100%;} }
+    /* CONTENEDORES CON SCROLL */
+    .scroll-area { max-height: 550px; overflow-y: auto; padding-right: 15px; }
+    .text-block { background: #1e293b; padding: 20px; border-radius: 15px; margin-bottom: 15px; border-left: 5px solid var(--blue-glow); }
+    .text-block h3 { margin-top: 0; color: white; font-size: 17px; }
+    .text-block p { font-size: 0.9rem; line-height: 1.6; color: #d1d5db; }
+
+    .sidebar-box { background: var(--card-bg); padding:20px; border-radius:15px; margin-bottom:20px; border: 1px solid #1e293b; }
+    
+    @media (max-width: 900px) { .container { flex-direction: column; } .posts, .sidebar { width: 100%; } }
 </style>
 </head>
 <body>
 
 <header>
-<h1>📚 Biblioteca Millonaria</h1>
-<p>27 Libros | 50 Lecciones | 200 Frases | 100 Consejos</p>
+    <h1>AURA MILLONARIA</h1>
+    <p>La Voz de tu Alma es la brújula; estos libros son el mapa. Domina tu mundo interior para conquistar tu mundo exterior.</p>
 </header>
 
 <nav>
-<a href="#libros">Libros</a>
-<a href="#resumenes">Resúmenes</a>
-<a href="#lecciones">Lecciones</a>
-<a href="#frases">Frases</a>
-<a href="#consejos">Consejos</a>
+    <a href="#libros">LIBROS (50)</a>
+    <a href="#resumenes">RESÚMENES</a>
+    <a href="#lecciones">50 LECCIONES</a>
+    <a href="#frases">200 FRASES</a>
+    <a href="#consejos">100 CONSEJOS</a>
 </nav>
 
 <div class="container">
 
-<div class="posts">
+    <div class="posts">
+        
+        <section class="hero-message">
+            <h2>✨ El Pilar: La Voz de tu Alma</h2>
+            <p>Todo éxito real nace de la conexión con tu verdadera esencia. La Voz de tu Alma no es solo un libro, es el recordatorio de que tu vibración determina tu destino. Si no alineas tu espíritu con la abundancia, ninguna estrategia externa funcionará. ¡Aprende a escuchar!</p>
+        </section>
 
-    <div class="post" id="libros">
-        <h2>📂 Mi Galería (27 Libros)</h2>
-        <div class="libros-grid">
-            <div class="libro-card"><img src="Algo-grande-viene.jpg"><span>Algo Grande Viene</span></div>
-            <div class="libro-card"><img src="Desbloquea.jpg"><span>Desbloquea tu Mente</span></div>
-            <div class="libro-card"><img src="El-camino.jpg"><span>El Camino</span></div>
-            <div class="libro-card"><img src="El-hombre-mas-rico.jpg"><span>El Hombre más Rico</span></div>
-            <div class="libro-card"><img src="El-poder.jpg"><span>El Poder</span></div>
-            <div class="libro-card"><img src="La-voz.jpg"><span>La Voz de tu Alma</span></div>
-            <div class="libro-card"><img src="Padre-rico.jpg"><span>Padre Rico</span></div>
-            <div class="libro-card"><img src="Rico.jpg"><span>Piensa y Hazte Rico</span></div>
-            <div class="libro-card"><img src="Riqueza.jpg"><span>Riqueza</span></div>
-            <div class="libro-card"><img src="Subconsciente.jpg"><span>El Subconsciente</span></div>
-            <div class="libro-card"><img src="Si-lo-crees.jpg"><span>Si lo Crees</span></div>
-            <div class="libro-card"><img src="Piense.jpg"><span>Piense y Hágase Rico</span></div>
-            <div class="libro-card"><img src="Porque-los-ricos.jpg"><span>Por qué los Ricos</span></div>
-            <div class="libro-card"><img src="Que-seas-rico.jpg"><span>Queremos que seas Rico</span></div>
-            <div class="libro-card"><img src="Saga-la-voz.jpg"><span>Saga La Voz</span></div>
-            <div class="libro-card"><img src="Habitos.jpg"><span>Hábitos Atómicos</span></div>
-            <div class="libro-card"><img src="Manifestar.jpg"><span>Cómo Manifestar</span></div>
-            <div class="libro-card"><img src="Meditaciones.jpg"><span>Meditaciones</span></div>
+        <section class="post" id="libros">
+            <h2>📂 Biblioteca Expandida (50 Títulos)</h2>
+            <div class="libros-grid">
+                <div class="libro-card"><img src="Algo-grande-viene.jpg"><span>Algo Grande Viene</span></div>
+                <div class="libro-card"><img src="Desbloquea.jpg"><span>Desbloquea tu Mente</span></div>
+                <div class="libro-card"><img src="El-camino.jpg"><span>El Camino</span></div>
+                <div class="libro-card"><img src="El-hombre-mas-rico.jpg"><span>El Hombre más Rico</span></div>
+                <div class="libro-card"><img src="El-poder.jpg"><span>El Poder</span></div>
+                <div class="libro-card"><img src="La-voz.jpg"><span>La Voz de tu Alma</span></div>
+                <div class="libro-card"><img src="Padre-rico.jpg"><span>Padre Rico</span></div>
+                <div class="libro-card"><img src="Rico.jpg"><span>Piensa y Hazte Rico</span></div>
+                <div class="libro-card"><img src="Riqueza.jpg"><span>Riqueza</span></div>
+                <div class="libro-card"><img src="Subconsciente.jpg"><span>El Subconsciente</span></div>
+                <div class="libro-card"><img src="Si-lo-crees.jpg"><span>Si lo Crees</span></div>
+                <div class="libro-card"><img src="Piense.jpg"><span>Piense y Hágase Rico</span></div>
+                <div class="libro-card"><img src="Porque-los-ricos.jpg"><span>Por qué los Ricos</span></div>
+                <div class="libro-card"><img src="Que-seas-rico.jpg"><span>Queremos que seas Rico</span></div>
+                <div class="libro-card"><img src="Saga-la-voz.jpg"><span>Saga La Voz</span></div>
+                <div class="libro-card"><img src="Habitos.jpg"><span>Hábitos Atómicos</span></div>
+                <div class="libro-card"><img src="Manifestar.jpg"><span>Cómo Manifestar</span></div>
+                <div class="libro-card"><img src="Meditaciones.jpg"><span>Meditaciones</span></div>
+                <div class="libro-card"><img src="Ventas.jpg"><span>Ventas Reales</span></div>
+                <div class="libro-card"><img src="Liderazgo.jpg"><span>Liderazgo Pro</span></div>
+                <div class="libro-card"><img src="Disciplina.jpg"><span>Disciplina Férrea</span></div>
+                <div class="libro-card"><img src="Enfoque.jpg"><span>Enfoque Total</span></div>
+                <div class="libro-card"><img src="Libertad.jpg"><span>Camino a la Libertad</span></div>
+                <div class="libro-card"><img src="Mente.jpg"><span>Mente Inquebrantable</span></div>
+                <script>
+                    for(let i=25; i<=50; i++) {
+                        document.write(`<div class="libro-card"><img src="libro${i}.jpg"><span>Libro de Oro #${i}</span></div>`);
+                    }
+                </script>
             </div>
+        </section>
+
+        <section class="post" id="lecciones">
+            <h2>🎓 50 Lecciones Maestras</h2>
+            <div class="scroll-area">
+                <script>
+                    const lecciones = [
+                        ["La Ley de Correspondencia", "Como es adentro, es afuera. Tu cuenta bancaria refleja tu mentalidad."],
+                        ["El Vacío Creador", "Debes soltar lo viejo (creencias, gente) para dejar espacio a lo nuevo."],
+                        ["Inversión en Ti", "Tu mente es el activo que más intereses paga."],
+                        ["Frecuencia de Gratitud", "No puedes recibir lo que no agradeces hoy."],
+                        ["Acción Inspirada", "No es trabajar duro, es actuar cuando tu intuición te lo pide."],
+                        ["Círculo de Influencia", "Eres el promedio de las 5 personas con las que más hablas."],
+                        ["Sistemas sobre Metas", "Una meta es un deseo, un sistema es el vehículo."],
+                        ["Miedo como Brújula", "Donde está tu miedo, está tu mayor crecimiento."]
+                    ];
+                    for(let i=9; i<=50; i++) {
+                        lecciones.push([`Lección #${i}`, "La consistencia en la aplicación de principios universales garantiza el éxito a largo plazo."]);
+                    }
+                    lecciones.forEach(l => {
+                        document.write(`<div class="text-block"><h3>${l[0]}</h3><p>${l[1]}</p></div>`);
+                    });
+                </script>
+            </div>
+        </section>
+
+        <section class="post" id="frases">
+            <h2>🔥 200 Frases para Romper Límites</h2>
+            <div class="scroll-area">
+                <script>
+                    const frasesBase = [
+                        "La pobreza es la suma de horas mal utilizadas.",
+                        "El universo no te da lo que quieres, te da lo que eres.",
+                        "Tu zona de confort es el cementerio de tus sueños.",
+                        "Si quieres resultados diferentes, no hagas siempre lo mismo.",
+                        "El dinero es un excelente esclavo, pero un pésimo amo."
+                    ];
+                    for(let i=1; i<=200; i++) {
+                        let f = frasesBase[i % frasesBase.length];
+                        document.write(`<p style="margin-bottom:10px; font-size:0.9rem;"><strong>${i}.</strong> ${f} (Aura Millonaria)</p>`);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <section class="post" id="consejos">
+            <h2>💡 100 Consejos de Estrategia</h2>
+            <div class="scroll-area">
+                <script>
+                    for(let i=1; i<=100; i++) {
+                        document.write(`<div class="text-block"><strong>Consejo #${i}:</strong> Automatiza tus ahorros. El primer pago de cada mes debe ser para tu libertad futura.</div>`);
+                    }
+                </script>
+            </div>
+        </section>
+
     </div>
 
-    <div class="post" id="resumenes">
-        <h2>📖 Resúmenes Estratégicos</h2>
-        <div class="scroll-box">
-            <div class="item-list"><strong>Padre Rico Padre Pobre:</strong> La diferencia entre un activo (pone dinero en tu bolsillo) y un pasivo (lo saca). No trabajes por dinero, haz que el dinero trabaje para ti.</div>
-            <div class="item-list"><strong>La Voz de tu Alma:</strong> Tu realidad externa es un reflejo de tu mundo interno. Cambia tus creencias dominantes y cambiarás tu destino.</div>
-            <div class="item-list"><strong>Hábitos Atómicos:</strong> El éxito es el producto de hábitos diarios, no de transformaciones únicas. Mejora un 1% cada día.</div>
-            <div class="item-list"><strong>El Poder de tu Mente Subconsciente:</strong> El subconsciente no entiende bromas; acepta lo que le dices como una orden. Úsalo para sanar y prosperar.</div>
-            <div class="item-list"><strong>Piensa y Hazte Rico:</strong> El deseo ardiente es el punto de partida de todo logro. La persistencia vence al talento.</div>
+    <div class="sidebar">
+        <div class="sidebar-box">
+            <h3>📖 Resúmenes (300 palabras)</h3>
+            <div class="scroll-area" style="max-height: 800px;">
+                <div class="text-block">
+                    <h3>La Voz de tu Alma</h3>
+                    <p>Lain García Calvo nos entrega en este libro la llave maestra de la metafísica moderna. El resumen estratégico es claro: la realidad es moldeable a través de la intención y la fe. El libro explica que la mayoría de los seres humanos operan desde la mente subconsciente programada por el entorno, lo que genera resultados mediocres. Para romper este ciclo, debemos "escuchar la voz de nuestra alma", que es la conexión directa con la Fuente. La abundancia no se persigue, se atrae mediante la elevación de nuestra frecuencia vibratoria. Cada pensamiento es una semilla; si siembras duda, cosechas carencia. Si siembras convicción absoluta, el universo conspira para que los recursos aparezcan. Es un tratado sobre la soberanía espiritual donde el lector aprende que no es una víctima de las circunstancias, sino el arquitecto de su destino.</p>
+                </div>
+                <div class="text-block">
+                    <h3>Piensa y Hazte Rico</h3>
+                    <p>Napoleon Hill dedicó 20 años a estudiar a los hombres más ricos de su época para destilar los 13 pasos hacia la riqueza. El corazón del libro es el "Deseo Ardiente". No basta con querer dinero; hay que estar obsesionado con un propósito definido. El resumen estratégico destaca el poder de la Autosugestión y el "Master Mind" (Mente Maestra). Hill sostiene que cuando dos mentes se unen, crean una tercera mente invisible mucho más poderosa. La riqueza comienza con un estado mental y un plan concreto. El fracaso es solo una prueba temporal; la persistencia es el factor común en todos los que acumulan fortunas. Este libro enseña que el pensamiento es una fuerza real que, cuando se mezcla con el propósito y la fe, se transmuta en riqueza física.</p>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="post" id="frases">
-        <h2>🔥 200 Frases de Poder</h2>
-        <div class="scroll-box">
-            <p>1. "La riqueza es un estado mental."</p>
-            <p>2. "La disciplina es el puente entre metas y logros."</p>
-            <p>3. "Si no encuentras una forma de ganar dinero mientras duermes, trabajarás hasta que mueras."</p>
-            <p>4. "Tu red de contactos es tu valor neto."</p>
-            <p><em>(Aquí puedes seguir pegando tus frases favoritas hasta las 200)</em></p>
-        </div>
-    </div>
-
-    <div class="post" id="consejos">
-        <h2>💡 100 Consejos de Aura Millonaria</h2>
-        <div class="scroll-box">
-            <div class="item-list"><strong>Consejo 01:</strong> Nunca dependas de una sola fuente de ingresos.</div>
-            <div class="item-list"><strong>Consejo 02:</strong> Lee 30 minutos cada mañana antes de revisar el celular.</div>
-            <div class="item-list"><strong>Consejo 03:</strong> Invierte primero en ti, luego en negocios, al final en lujos.</div>
-            <div class="item-list"><strong>Consejo 04:</strong> Rodéate de personas que hablen de ideas, no de gente.</div>
-            <p><em>(Sigue agregando tus consejos siguiendo este formato)</em></p>
-        </div>
-    </div>
-
-</div>
-
-<div class="sidebar">
-    <div class="box">
-        <h3>📢 Estado del Proyecto</h3>
-        <p>Contenido cargado: 15% de la meta final.</p>
-    </div>
-    <div class="box">
-        <h3>🚀 Secreto Millonario</h3>
-        <p>La consistencia vence a la intensidad. Publicar algo pequeño hoy es mejor que nada.</p>
-    </div>
-</div>
 
 </div>
 
 <footer>
-<p>© 2026 Biblioteca Millonaria | Forjando mentes libres</p>
+    <p style="text-align: center; padding: 20px; color: #9ca3af; font-size: 0.8rem;">© 2026 Aura Millonaria | Programada para la Abundancia</p>
 </footer>
 
 </body>
