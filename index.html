@@ -1,153 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biblioteca Millonaria</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-body {
-    font-family: 'Poppins', sans-serif;
-    margin:0;
-    background:#0b1120;
-    color:#e5e7eb;
-}
-header {
-    background: linear-gradient(120deg,#020617,#1e3a8a);
-    padding:40px;
-    text-align:center;
-}
-header h1 {font-size:32px;margin:0;}
-header p {color:#9ca3af;}
-nav {
-    background:#020617;
-    padding:15px;
-    text-align:center;
-    position:sticky;
-    top:0;
-}
-nav a {
-    color:#e5e7eb;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:500;
-}
-nav a:hover {color:#38bdf8;}
-.container {display:flex;padding:25px;}
-.posts {width:70%;}
-.post {
-    background:#111827;
-    padding:20px;
-    margin-bottom:25px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.5);
-    transition:0.3s;
-}
-.post:hover {transform:scale(1.02);}
-.post img {
-    width:100%;
-    border-radius:12px;
-    margin-bottom:10px;
-}
-.post h2 {color:#38bdf8;}
-.sidebar {width:30%;padding-left:20px;}
-.box {
-    background:#111827;
-    padding:15px;
-    margin-bottom:20px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.4);
-}
-footer {
-    background:#020617;
-    text-align:center;
-    padding:20px;
-    color:#9ca3af;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Millonaria</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: white; margin: 0; padding: 0; }
+        header { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); padding: 50px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: #94a3b8; margin-top: 10px; font-size: 1rem; }
+        .container { padding: 30px 15px; max-width: 1200px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
+        .card { background: #1e293b; border-radius: 12px; overflow: hidden; transition: transform 0.3s; border: 1px solid #334155; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 240px; object-fit: cover; }
+        .card-content { padding: 12px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-title { font-size: 0.9rem; font-weight: bold; margin: 5px 0; color: #f8fafc; }
+        .btn { display: block; background: #3b82f6; color: white; text-decoration: none; padding: 8px; border-radius: 6px; font-size: 0.8rem; margin-top: 10px; transition: background 0.2s; }
+        .btn:hover { background: #2563eb; }
+    </style>
 </head>
 <body>
 
 <header>
-<h1>📚 Biblioteca Millonaria</h1>
-<p>Conocimiento, mentalidad y estrategias que transforman vidas</p>
+    <h1>📚 Biblioteca Millonaria</h1>
+    <p class="subtitle">Tu dosis diaria de mentalidad y abundancia</p>
 </header>
 
-<nav>
-<a href="#">Inicio</a>
-<a href="#">Libros</a>
-<a href="#">Frases</a>
-<a href="#">Lecciones</a>
-</nav>
-
 <div class="container">
-
-<div class="posts">
-
-<div class="post">
-<img src="https://via.placeholder.com/600x300" alt="Libro">
-<h2>📖 La Voz de tu Alma</h2>
-<p>Este libro me sorprendió más de lo que esperaba. Al inicio pensé que sería otro libro motivacional más, pero terminó siendo algo más profundo. Me hizo cuestionar muchas creencias que tenía sobre el dinero y la vida. Lo que más me impactó fue entender que muchas veces nosotros mismos bloqueamos nuestro crecimiento sin darnos cuenta. Después de leerlo, comencé a prestar más atención a mis pensamientos diarios y a cómo influyen en mis decisiones. No es un libro mágico, pero sí puede abrirte la mente si lo analizas de verdad.</p>
+    <div class="grid" id="biblioteca">
+        <div class="card"><img src="La-voz.jpg"><div class="card-content"><div class="card-title">La Voz de tu Alma</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Padre-rico.jpg"><div class="card-content"><div class="card-title">Padre Rico Padre Pobre</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Rico.jpg"><div class="card-content"><div class="card-title">Piensa y Hazte Rico</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Habitos.jpg"><div class="card-content"><div class="card-title">Hábitos Atómicos</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="La-psicologia-del-dinero.jpg"><div class="card-content"><div class="card-title">Psicología del Dinero</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Algo-grande-viene.jpg"><div class="card-content"><div class="card-title">Algo Grande Viene</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Desbloquea.jpg"><div class="card-content"><div class="card-title">Desbloquea tu Mente</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="El-hombre-mas-rico.jpg"><div class="card-content"><div class="card-title">El Hombre más Rico</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="El-poder.jpg"><div class="card-content"><div class="card-title">El Poder</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Expande.jpg"><div class="card-content"><div class="card-title">Expande tu Mente</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Subconsciente.jpg"><div class="card-content"><div class="card-title">El Subconsciente</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Si-lo-crees.jpg"><div class="card-content"><div class="card-title">Si lo Crees lo Creas</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Manifestar.jpg"><div class="card-content"><div class="card-title">Cómo Manifestar</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Meditaciones.jpg"><div class="card-content"><div class="card-title">Meditaciones</div><a href="#" class="btn">Resumen</a></div></div>
+        <div class="card"><img src="Riqueza.jpg"><div class="card-content"><div class="card-title">Riqueza</div><a href="#" class="btn">Resumen</a></div></div>
+    </div>
 </div>
-
-<div class="post">
-<img src="https://via.placeholder.com/600x300" alt="Libro">
-<h2>📖 Piensa y Hazte Rico</h2>
-<p>Antes de leerlo pensé que sería un libro antiguo sin mucho valor actual, pero me equivoqué. Sus enseñanzas siguen siendo muy aplicables hoy en día. Me hizo entender que el éxito no depende tanto de las circunstancias, sino de la forma en que piensas y actúas. Algo que me quedó claro es que la mayoría falla porque no tiene un objetivo claro. Este libro no te promete dinero fácil, pero sí te cambia la mentalidad si lo tomas en serio.</p>
-</div>
-
-<div class="post">
-<img src="https://via.placeholder.com/600x300" alt="Libro">
-<h2>📖 Hábitos Atómicos</h2>
-<p>Este fue uno de los libros más prácticos que he leído. No se basa solo en motivación, sino en acciones concretas. Me hizo darme cuenta de que el cambio real viene de pequeños hábitos diarios. Después de aplicar algunas ideas, noté cómo pequeñas mejoras pueden generar resultados grandes con el tiempo. Es un libro que realmente vale la pena si quieres avanzar de forma constante.</p>
-</div>
-
-<div class="post">
-<h2>💡 Lección Millonaria</h2>
-<p>Las personas exitosas no esperan el momento perfecto, actúan incluso cuando no tienen ganas. La disciplina es la clave. No se trata de hacer algo grande una vez, sino de repetir pequeñas acciones todos los días. Esa consistencia es lo que genera resultados reales a largo plazo.</p>
-</div>
-
-<div class="post">
-<h2>🔥 Frases Poderosas</h2>
-<p>
-"La riqueza comienza en la mente"<br>
-"La disciplina crea resultados"<br>
-"El éxito es acumulativo"<br>
-"Haz hoy lo que otros no quieren"
-</p>
-</div>
-
-</div>
-
-<div class="sidebar">
-
-<div class="box">
-<h3>📢 Monetización</h3>
-<p>Espacio para anuncios y generación de ingresos pasivos</p>
-</div>
-
-<div class="box">
-<h3>📚 Libros clave</h3>
-<ul>
-<li>La Voz de tu Alma</li>
-<li>Piensa y Hazte Rico</li>
-<li>Hábitos Atómicos</li>
-<li>El Código del Dinero</li>
-</ul>
-</div>
-
-<div class="box">
-<h3>🚀 Secreto</h3>
-<p>Las personas que aprenden constantemente siempre tienen ventaja.</p>
-</div>
-
-</div>
-
-</div>
-
-<footer>
-<p>© 2026 Biblioteca Millonaria | Plataforma de conocimiento estratégico</p>
-</footer>
 
 </body>
 </html>
